@@ -1,2 +1,40 @@
+# Robots.txt for Coopera Trading (https://cooperatrading.com)
 User-agent: *
-Disallow:
+
+# Allow public discovery and crawling
+Allow: /
+Allow: /about
+Allow: /products
+Allow: /products/*
+Allow: /contact
+Allow: /quote
+Allow: /assets/
+Allow: /build/
+Allow: /storage/
+
+# Disallow private administration, authentication, and user portals
+Disallow: /admin/
+Disallow: /admin
+Disallow: /login
+Disallow: /register
+Disallow: /password/
+Disallow: /dashboard
+Disallow: /profile
+
+# Disallow backend APIs and verification tokens
+Disallow: /api/
+Disallow: /verify/
+
+# Disallow maintenance & utility PHP endpoints
+Disallow: /*.php$
+Disallow: /clear-cache.php
+Disallow: /debug.php
+Disallow: /deploy-setup
+Disallow: /run-fresh-migration
+Disallow: /wipe-and-migrate-now
+
+# Prevent duplicate content from parameterized URLs
+Disallow: /*?*
+
+# XML Sitemap
+Sitemap: https://cooperatrading.com/sitemap.xml

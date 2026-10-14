@@ -6,13 +6,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Coopera Trading') | Coopera Trading</title>
+    <title>{{ View::hasSection('title') ? View::getSection('title') . ' | Coopera Trading' : 'Coopera Trading — Industrial Chemicals, Construction & Export Solutions in Ethiopia' }}</title>
     <meta name="description"
-        content="@yield('description', 'Coopera Trading — your trusted partner for construction, industrial chemicals, water solutions, packaging, technology, and export products.')">
+        content="@yield('description', 'Coopera Trading — premier B2B trading partner supplying construction chemicals, industrial raw materials, water solutions, packaging, and export commodities across Ethiopia and global markets.')">
+    <meta name="keywords"
+        content="@yield('keywords', 'Coopera Trading, Industrial Chemicals Ethiopia, Construction Chemicals Addis Ababa, Waterproofing Systems, Ethiopian Coffee Export, Water Treatment Chemicals, PVC Resins, Industrial Supplies, B2B Trading Ethiopia')">
+    <meta name="author" content="Coopera Trading">
+    <meta name="robots" content="@yield('robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')">
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <!-- Regional & Geo-targeting (Addis Ababa, Ethiopia) -->
+    <meta name="geo.region" content="ET-AA">
+    <meta name="geo.placename" content="Addis Ababa">
+    <meta name="geo.position" content="9.0107;38.7613">
+    <meta name="ICBM" content="9.0107, 38.7613">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:site_name" content="Coopera Trading">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="@yield('og_title', View::hasSection('title') ? View::getSection('title') . ' | Coopera Trading' : 'Coopera Trading — Industrial Chemicals, Construction & Export Solutions in Ethiopia')">
+    <meta property="og:description" content="@yield('description', 'Coopera Trading — premier B2B trading partner supplying construction chemicals, industrial raw materials, water solutions, packaging, and export commodities across Ethiopia and global markets.')">
+    <meta property="og:image" content="@yield('og_image', asset('assets/brand/og-banner.png'))">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Coopera Trading — Trading That Builds Industries">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CooperaTrading">
+    <meta name="twitter:title" content="@yield('og_title', View::hasSection('title') ? View::getSection('title') . ' | Coopera Trading' : 'Coopera Trading — Industrial Chemicals, Construction & Export Solutions in Ethiopia')">
+    <meta name="twitter:description" content="@yield('description', 'Coopera Trading — premier B2B trading partner supplying construction chemicals, industrial raw materials, water solutions, packaging, and export commodities across Ethiopia and global markets.')">
+    <meta name="twitter:image" content="@yield('og_image', asset('assets/brand/og-banner.png'))">
+
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/brand/logo-mark.png') }}">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD Structured Data: Organization & Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["Corporation", "WholesaleStore"],
+          "@id": "{{ url('/') }}#organization",
+          "name": "Coopera Trading",
+          "alternateName": "Coopera Trading PLC",
+          "url": "{{ url('/') }}",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "{{ asset('assets/brand/logo-horizontal.png') }}"
+          },
+          "image": "{{ asset('assets/brand/og-banner.png') }}",
+          "description": "Premier B2B trading partner in Ethiopia supplying construction chemicals, industrial raw materials, water treatment equipment, packaging, and export commodities.",
+          "telephone": "+251 97 339 7012",
+          "email": "info@cooperatrading.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Ethio-Best Building",
+            "addressLocality": "Kirkos Sub-City",
+            "addressRegion": "Addis Ababa",
+            "addressCountry": "ET"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 9.0107,
+            "longitude": 38.7613
+          },
+          "areaServed": [
+            {
+              "@type": "Country",
+              "name": "Ethiopia"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "East Africa"
+            },
+            {
+              "@type": "Country",
+              "name": "Worldwide"
+            }
+          ],
+          "sameAs": [
+            "https://t.me/coopera_trading1",
+            "https://wa.me/251973397012"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "{{ url('/') }}#website",
+          "url": "{{ url('/') }}",
+          "name": "Coopera Trading",
+          "publisher": {
+            "@id": "{{ url('/') }}#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "{{ url('/products') }}?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
+    @stack('schema')
 
     <style>
         [x-cloak] {

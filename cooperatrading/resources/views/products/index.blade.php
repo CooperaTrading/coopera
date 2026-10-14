@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Products')
-@section('description', 'Browse our full catalog of construction, industrial chemicals, water solutions, packaging, technology, and export products.')
+@section('title', 'B2B Product Catalog — Industrial & Construction Supplies in Ethiopia')
+@section('description', 'Explore Coopera Trading’s extensive B2B catalog of industrial chemicals, concrete solutions, water filtration, packaging supplies, and Ethiopian export commodities.')
+@section('og_title', 'B2B Product Catalog | Coopera Trading Ethiopia')
 
 @section('content')
 <section class="relative bg-slate-950 text-white min-h-[360px] lg:min-h-[400px] flex items-center overflow-hidden">

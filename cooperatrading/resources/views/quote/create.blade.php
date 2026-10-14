@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Request a Quote')
-@section('description', 'Select products and quantities and receive a proforma invoice from Coopera Trading within 24 hours.')
+@section('title', 'Request a Proforma Invoice & Price Quotation — Coopera Trading')
+@section('description', 'Request an official, VAT-compliant proforma invoice for industrial chemicals, construction materials, water equipment, and export commodities across Ethiopia.')
+@section('og_title', 'Request a Proforma Invoice | Coopera Trading')
 
 @section('content')
 @php

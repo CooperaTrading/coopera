@@ -212,4 +212,8 @@ DB_PASSWORD=your_cpanel_password
 
 ## License
 
-Proprietary. All rights reserved.
+Proprietary Software. Copyright © 2026 [RCC](https://www.razielcc.com). All rights reserved.
+
+- **Developer:** [Abrham Taye](https://github.com/Abrhamtaye7)
+- **Page Owner:** [Coopera Trading](https://cooperatrading.com)
+

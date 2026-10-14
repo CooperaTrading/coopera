@@ -11,7 +11,21 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductCatalogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuoteRequestController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
+
+// SEO Directives & Sitemap
+Route::get('/robots.txt', function () {
+    $content = file_exists(public_path('robots.txt'))
+        ? file_get_contents(public_path('robots.txt'))
+        : "User-agent: *\nDisallow: /admin\nSitemap: " . url('/sitemap.xml');
+
+    return response($content, 200, [
+        'Content-Type' => 'text/plain; charset=utf-8',
+    ]);
+})->name('robots');
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 // Product search API (for header autocomplete)
 Route::get('/api/products/search', [ProductSearchController::class, 'search'])->name('api.products.search');

@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'About Us')
-@section('description', 'Learn about Coopera Trading — our mission, our markets, and our commitment to delivering industrial and export products across Ethiopia and East Africa.')
+@section('title', 'About Us — Leading Multi-Sector Trading Partner in Ethiopia')
+@section('description', 'Discover Coopera Trading — our leadership, infrastructure, global sourcing network, and dedication to empowering Ethiopian industries and export markets.')
+@section('og_title', 'About Coopera Trading | Addis Ababa, Ethiopia')
 
 @section('content')
 <section class="relative bg-slate-950 text-white min-h-[380px] lg:min-h-[440px] flex items-center overflow-hidden">

@@ -1,7 +1,73 @@
 @extends('layouts.app')
 
-@section('title', $product->name)
-@section('description', $product->description)
+@section('title', "{$product->name} — {$category->name} Supplier in Ethiopia")
+@section('description', \Illuminate\Support\Str::limit(strip_tags($product->description), 155))
+@section('og_title', "{$product->name} — {$category->name} | Coopera Trading")
+@section('og_image', $product->image_url)
+@section('og_type', 'product')
+
+@push('schema')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ route('home') }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Products",
+          "item": "{{ route('products') }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ $category->name }}",
+          "item": "{{ route('products.category', $category) }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "{{ $product->name }}",
+          "item": "{{ url()->current() }}"
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "{{ url()->current() }}#product",
+      "name": "{{ $product->name }}",
+      "description": "{{ addslashes(strip_tags($product->description)) }}",
+      "image": "{{ $product->image_url }}",
+      "sku": "COOP-{{ $product->id }}",
+      "category": "{{ $category->name }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "Coopera Trading"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "{{ url()->current() }}",
+        "priceCurrency": "ETB",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@type": "Organization",
+          "name": "Coopera Trading"
+        }
+      }
+    }
+  ]
+}
+</script>
+@endpush
 
 @section('content')
 <section class="bg-coopera-cream">

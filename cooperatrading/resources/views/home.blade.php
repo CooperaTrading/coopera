@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
-@section('description', 'Coopera Trading — your trusted partner for construction chemicals, industrial raw materials, specialty exports, and global logistics across Ethiopia and East Africa.')
+@section('title', 'Industrial Chemicals, Construction & Export Solutions in Ethiopia')
+@section('description', 'Coopera Trading is a premier Ethiopian B2B trading enterprise supplying high-performance construction chemicals, industrial raw materials, water solutions, packaging, and specialty export commodities.')
+@section('og_title', 'Coopera Trading — Industrial Chemicals, Construction & Export Solutions in Ethiopia')
 
 @section('content')
     <section x-data="{

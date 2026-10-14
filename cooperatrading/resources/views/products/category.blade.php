@@ -1,7 +1,38 @@
 @extends('layouts.app')
 
-@section('title', $category->name)
-@section('description', $category->description)
+@section('title', "{$category->name} Supplier & Distributor in Ethiopia")
+@section('description', \Illuminate\Support\Str::limit(strip_tags($category->description), 155))
+@section('og_title', "{$category->name} — Industrial Supply in Ethiopia | Coopera Trading")
+@section('og_image', $category->image_url)
+
+@push('schema')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ route('home') }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Products",
+      "item": "{{ route('products') }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ $category->name }}",
+      "item": "{{ url()->current() }}"
+    }
+  ]
+}
+</script>
+@endpush
 
 @section('content')
 <section class="relative bg-slate-950 text-white min-h-[380px] lg:min-h-[420px] flex items-center overflow-hidden">

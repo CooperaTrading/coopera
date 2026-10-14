@@ -48,6 +48,9 @@ class Product extends Model
                 $product->slug = Str::slug($product->name);
             }
         });
+
+        static::saved(fn () => \Illuminate\Support\Facades\Cache::forget('sitemap_xml_content'));
+        static::deleted(fn () => \Illuminate\Support\Facades\Cache::forget('sitemap_xml_content'));
     }
 
     public function getImageUrlAttribute(): string

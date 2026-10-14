@@ -46,6 +46,9 @@ class Category extends Model
                 $category->slug = Str::slug($category->name);
             }
         });
+
+        static::saved(fn () => \Illuminate\Support\Facades\Cache::forget('sitemap_xml_content'));
+        static::deleted(fn () => \Illuminate\Support\Facades\Cache::forget('sitemap_xml_content'));
     }
 
     public function getImageUrlAttribute(): string

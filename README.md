@@ -51,6 +51,11 @@ This platform provides a high-converting public catalog, an interactive quote re
 - **Interactive Quote Request Engine**: Alpine.js-powered multi-product selector with live catalog search, unit of measure awareness, dynamic row additions, and quantity calculations.
 - **Header Live Search API**: Instant debounced product lookup (`/api/products/search`) returning matching products, categories, and direct links.
 - **Digital Proforma Verification**: Public online verification portal (`/verify/proforma/{number}`) allowing customers or customs authorities to verify issued proforma invoices via QR code or direct link.
+- **Enterprise SEO & Structured Data Suite**:
+  - **Dynamic XML Sitemap (`/sitemap.xml`)**: Auto-generates standard XML indexing all static routes, categories, and active products with priorities, change frequencies, and auto-invalidation on model updates.
+  - **Strict Crawl Directives (`/robots.txt`)**: Protects private administrative portals while maximizing public catalog discovery.
+  - **Social Sharing OpenGraph & Twitter Cards**: Branded 1200x630 social preview card (`public/assets/brand/og-banner.png`) and dynamic product images for rich link previews across WhatsApp, LinkedIn, Telegram, and Twitter.
+  - **Schema.org JSON-LD Structured Data**: Global `Corporation` & `WholesaleStore` definitions, plus granular `Product` and `BreadcrumbList` schemas for Google Rich Results.
 - **Contact & Inquiries**: Validated corporate contact form dispatching notifications to company management.
 
 ### Administrative Panel (`/admin`)
@@ -255,6 +260,8 @@ The database is pre-seeded with an active Super Administrator account:
 | `/contact` | `GET`, `POST` | Contact info, office location, and direct message form |
 | `/verify/proforma/{number}` | `GET` | Public proforma invoice digital authenticity verification |
 | `/api/products/search` | `GET` | Debounced JSON search API for header search bar |
+| `/sitemap.xml` | `GET` | Dynamic XML Sitemap with 24-hr caching for search engines |
+| `/robots.txt` | `GET` | Search engine crawl policy and sitemap locator |
 
 ### Administrative Endpoints (`/admin` prefix - Auth Required)
 | URL | Controller | Description |
@@ -568,5 +575,9 @@ When `MAIL_MAILER=log` is set in `.env`, outgoing emails are not sent over the i
 
 ## 📄 License & Rights
 
-Proprietary Software. Copyright © 2026 Coopera Trading. All rights reserved.
-Developed for official commercial operations of Coopera Trading.
+Proprietary Software. Copyright © 2026 [RCC](https://www.razielcc.com). All rights reserved.
+
+- **Developer:** [Abrham Taye](https://github.com/Abrhamtaye7)
+- **Page Owner:** [Coopera Trading](https://cooperatrading.com)
+
+Developed for the official commercial operations of [Coopera Trading](https://cooperatrading.com).

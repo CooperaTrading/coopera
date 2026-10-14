@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us')
-@section('description', 'Get in touch with Coopera Trading at Ethio-Best Building, Addis Ababa. Inquire about industrial chemicals, construction materials, and export supplies.')
+@section('title', 'Contact Coopera Trading — Addis Ababa Headquarters & Sourcing')
+@section('description', 'Get in touch with Coopera Trading at Ethio-Best Building, Kirkos Sub-City, Addis Ababa, Ethiopia. Connect directly for product inquiries, proforma invoices, and bulk trade.')
+@section('og_title', 'Contact Coopera Trading | Addis Ababa, Ethiopia')
 
 @section('content')
     <!-- HERO HEADER -->
