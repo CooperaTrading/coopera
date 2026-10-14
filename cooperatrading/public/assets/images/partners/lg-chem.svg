@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+    <rect width="200" height="60" rx="8" fill="#F8FAFC"/>
+    <circle cx="35" cy="30" r="16" fill="#C40043"/>
+    <text x="31" y="35" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="14" fill="#FFFFFF">L</text>
+    <text x="62" y="37" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="19" fill="#0F172A" letter-spacing="0.5">LG Chem</text>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+    <rect width="200" height="60" rx="8" fill="#F8FAFC"/>
+    <path d="M22 36C22 25 32 18 45 18C48 18 51 19 53 20L49 26C48 25 46 24 44 24C36 24 30 29 30 36C30 43 36 48 44 48C46 48 48 47 49 46L53 52C51 53 48 54 45 54C32 54 22 47 22 36Z" fill="#0284C7"/>
+    <text x="65" y="38" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="22" fill="#0284C7" letter-spacing="1">SABIC</text>
+</svg>

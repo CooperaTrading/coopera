@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+    <rect width="200" height="60" rx="8" fill="#F8FAFC"/>
+    <circle cx="34" cy="30" r="14" fill="#E11D48"/>
+    <path d="M26 30L32 36L42 24" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="58" y="37" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="18" fill="#0F172A" letter-spacing="0.5">WANHUA</text>
+</svg>

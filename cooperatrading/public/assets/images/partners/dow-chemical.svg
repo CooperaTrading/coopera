@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+    <rect width="200" height="60" rx="8" fill="#F8FAFC"/>
+    <polygon points="35,14 55,30 35,46 15,30" fill="#E11D48"/>
+    <text x="68" y="38" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="22" fill="#E11D48" letter-spacing="1">DOW</text>
+</svg>
